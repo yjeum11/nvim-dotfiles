@@ -32,12 +32,14 @@ require("lazy").setup({
     {'neovim/nvim-lspconfig'},
     {'hrsh7th/cmp-nvim-lsp'},
     {'hrsh7th/nvim-cmp'},
+    {'hrsh7th/cmp-buffer'},
     {'L3MON4D3/LuaSnip'},
 
     { 'nvim-lualine/lualine.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' },
 
     "roxma/vim-tmux-clipboard",
-    "christoomey/vim-tmux-navigator"
+    "christoomey/vim-tmux-navigator",
+    "numToStr/Comment.nvim"
 }
 })
 
@@ -47,4 +49,5 @@ require("plugins.undotree")
 require("plugins.fzf")
 require("plugins.lspzero")
 require("plugins.lualine")
+require("plugins.comment")
 

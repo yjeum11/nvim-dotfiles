@@ -1,6 +1,7 @@
 -- annoying stuff
 vim.opt.swapfile = false
 vim.opt.belloff = "all"
+vim.opt.showmode = false
 
 -- tabs
 vim.opt.tabstop = 4
