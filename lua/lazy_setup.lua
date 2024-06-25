@@ -39,7 +39,10 @@ require("lazy").setup({
 
     "roxma/vim-tmux-clipboard",
     "christoomey/vim-tmux-navigator",
-    "numToStr/Comment.nvim"
+    "numToStr/Comment.nvim",
+
+    { "lervag/vimtex", lazy = false }
+
 }
 })
 
