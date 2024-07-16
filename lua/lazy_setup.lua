@@ -53,4 +53,5 @@ require("plugins.fzf")
 require("plugins.lspzero")
 require("plugins.lualine")
 require("plugins.comment")
+require("plugins.vimtex")
 
