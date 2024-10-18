@@ -12,28 +12,35 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    { "nvim-treesitter/nvim-treesitter", build = 
-    function() 
+    { "nvim-treesitter/nvim-treesitter", build =
+    function()
         vim.cmd(":TSUpdate")
     end },
-    { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true },
+
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+
     "mbbill/undotree",
-    { "junegunn/fzf", build = 
+    { "junegunn/fzf", build =
     function()
         vim.fn["fzf#install"]()
     end },
     "junegunn/fzf.vim",
-    -- LSP Zero
-    --- Uncomment the two plugins below if you want to manage the language servers from neovim
-    -- {'williamboman/mason.nvim'},
-    -- {'williamboman/mason-lspconfig.nvim'},
 
-    {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
+    {'williamboman/mason.nvim'},
+    {'williamboman/mason-lspconfig.nvim'},
+
     {'neovim/nvim-lspconfig'},
+
+    {"https://git.sr.ht/~whynothugo/lsp_lines.nvim"},
+
+    {'SirVer/ultisnips'},
+    {'quangnguyen30192/cmp-nvim-ultisnips'},
     {'hrsh7th/cmp-nvim-lsp'},
     {'hrsh7th/nvim-cmp'},
     {'hrsh7th/cmp-buffer'},
-    {'L3MON4D3/LuaSnip'},
+    {'hrsh7th/cmp-path'},
+
+    {'PhilRunninger/cmp-rpncalc'},
 
     { 'nvim-lualine/lualine.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' },
 
@@ -41,7 +48,47 @@ require("lazy").setup({
     "christoomey/vim-tmux-navigator",
     "numToStr/Comment.nvim",
 
-    { "lervag/vimtex", lazy = false }
+    { "lervag/vimtex", lazy = false },
+
+    {"stevearc/oil.nvim"},
+
+    -- Lean
+    {
+        'Julian/lean.nvim',
+        event = { 'BufReadPre *.lean', 'BufNewFile *.lean' },
+
+        dependencies = {
+            'neovim/nvim-lspconfig',
+            'nvim-lua/plenary.nvim',
+            'nvim-telescope/telescope.nvim'
+            -- you also will likely want nvim-cmp or some completion engine
+        },
+
+        -- see details below for full configuration options
+        opts = {
+            lsp = {},
+            mappings = true,
+        }
+    },
+    "tpope/vim-surround",
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        opts = {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+        },
+        keys = {
+            {
+                "<leader>?",
+                function()
+                    require("which-key").show({ global = false })
+                end,
+                desc = "Buffer Local Keymaps (which-key)",
+            },
+        },
+    }
 
 }
 })
@@ -50,8 +97,10 @@ require("plugins.treesitter")
 require("plugins.gruvbox")
 require("plugins.undotree")
 require("plugins.fzf")
-require("plugins.lspzero")
+require("plugins.lsp")
 require("plugins.lualine")
 require("plugins.comment")
 require("plugins.vimtex")
+require("plugins.lean")
+require("plugins.oil")
 

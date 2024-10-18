@@ -1,2 +1,12 @@
-require("lualine").setup()
-options = { theme = 'gruvbox' }
+require("lualine").setup({
+    sections = {
+        lualine_c = {
+            {
+                'filename',
+                path = 1
+            }
+        }
+    }
+})
+
+

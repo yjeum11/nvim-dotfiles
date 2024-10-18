@@ -32,6 +32,10 @@ vim.keymap.set("n", "<leader>d", "\"_d")
 vim.keymap.set("n", "<leader>D", "\"_D")
 vim.keymap.set("v", "<leader>d", "\"_d")
 
+vim.keymap.set("n", "<leader>p", "\"_p")
+vim.keymap.set("n", "<leader>P", "\"_P")
+vim.keymap.set("v", "<leader>p", "\"_p")
+
 -- move selected lines
 vim.keymap.set("v", "J", ":m<space>'>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m<space>'<-2<CR>gv=gv")
