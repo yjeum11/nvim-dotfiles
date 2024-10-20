@@ -33,8 +33,6 @@ require("lazy").setup({
 
     {"https://git.sr.ht/~whynothugo/lsp_lines.nvim"},
 
-    -- {'SirVer/ultisnips'},
-    -- {'quangnguyen30192/cmp-nvim-ultisnips'},
     {'hrsh7th/cmp-nvim-lsp'},
     {'hrsh7th/nvim-cmp'},
     {'hrsh7th/cmp-buffer'},
@@ -48,28 +46,8 @@ require("lazy").setup({
     "christoomey/vim-tmux-navigator",
     "numToStr/Comment.nvim",
 
-    { "lervag/vimtex", lazy = false },
-
     {"stevearc/oil.nvim"},
 
-    -- Lean
-    {
-        'Julian/lean.nvim',
-        event = { 'BufReadPre *.lean', 'BufNewFile *.lean' },
-
-        dependencies = {
-            'neovim/nvim-lspconfig',
-            'nvim-lua/plenary.nvim',
-            'nvim-telescope/telescope.nvim'
-            -- you also will likely want nvim-cmp or some completion engine
-        },
-
-        -- see details below for full configuration options
-        opts = {
-            lsp = {},
-            mappings = true,
-        }
-    },
     "tpope/vim-surround",
     {
         "folke/which-key.nvim",
@@ -100,7 +78,5 @@ require("plugins.fzf")
 require("plugins.lsp")
 require("plugins.lualine")
 require("plugins.comment")
-require("plugins.vimtex")
-require("plugins.lean")
 require("plugins.oil")
 
