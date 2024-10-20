@@ -33,8 +33,8 @@ require("lazy").setup({
 
     {"https://git.sr.ht/~whynothugo/lsp_lines.nvim"},
 
-    {'SirVer/ultisnips'},
-    {'quangnguyen30192/cmp-nvim-ultisnips'},
+    -- {'SirVer/ultisnips'},
+    -- {'quangnguyen30192/cmp-nvim-ultisnips'},
     {'hrsh7th/cmp-nvim-lsp'},
     {'hrsh7th/nvim-cmp'},
     {'hrsh7th/cmp-buffer'},

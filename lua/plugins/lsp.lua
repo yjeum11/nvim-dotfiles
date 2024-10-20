@@ -28,6 +28,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
+
 require("mason").setup()
 require("mason-lspconfig").setup({
     ensure_installed = {},
@@ -79,7 +80,7 @@ vim.diagnostic.config({
     virtual_text = false,
 })
 
-local cmp_ultisnips_mappings = require("cmp_nvim_ultisnips.mappings")
+-- local cmp_ultisnips_mappings = require("cmp_nvim_ultisnips.mappings")
 local cmp = require('cmp')
 
 cmp.setup({
@@ -109,22 +110,23 @@ cmp.setup({
                 cmp.complete()
             end
         end),
-        ["<Tab>"] = cmp.mapping(
-          function(fallback)
-            cmp_ultisnips_mappings.expand_or_jump_forwards(fallback)
-          end,
-          { "i", "s", --[[ "c" (to enable the mapping in command mode) ]] }
-        ),
-        ["<S-Tab>"] = cmp.mapping(
-          function(fallback)
-            cmp_ultisnips_mappings.jump_backwards(fallback)
-          end,
-          { "i", "s", --[[ "c" (to enable the mapping in command mode) ]] }
-        ),
+        -- ["<Tab>"] = cmp.mapping(
+        --   function(fallback)
+        --     cmp_ultisnips_mappings.expand_or_jump_forwards(fallback)
+        --   end,
+        --   { "i", "s", --[[ "c" (to enable the mapping in command mode) ]] }
+        -- ),
+        -- ["<S-Tab>"] = cmp.mapping(
+        --   function(fallback)
+        --     cmp_ultisnips_mappings.jump_backwards(fallback)
+        --   end,
+        --   { "i", "s", --[[ "c" (to enable the mapping in command mode) ]] }
+        -- ),
     },
     snippet = {
         expand = function(args)
-            vim.fn["UltiSnips#Anon"](args.body)
+            -- vim.fn["UltiSnips#Anon"](args.body)
+	    vim.snippet.expand(args.body)
         end,
     },
 })
