@@ -1,4 +1,4 @@
 require("set")
 require("remap")
-require("lazy_setup")
+require("plug")
 
