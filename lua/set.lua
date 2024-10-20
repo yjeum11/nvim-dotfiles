@@ -30,6 +30,12 @@ vim.opt.splitright = true
 vim.opt.colorcolumn = "80"
 vim.opt.guicursor = ""
 vim.opt.conceallevel = 2
+vim.opt.smoothscroll = true
+
+-- folding with treesitter
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldenable = false
 
 -- no shada (permissions issue on ece machines)
 vim.opt.shadafile = "NONE"
@@ -38,3 +44,4 @@ vim.opt.mouse = "a"
 vim.opt.encoding = "utf-8"
 
 vim.g.mapleader = " "
+
