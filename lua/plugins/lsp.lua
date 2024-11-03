@@ -25,6 +25,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gR', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
     vim.keymap.set({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
     vim.keymap.set('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+
+    vim.keymap.set('n', 'gK', '<cmd>lua vim.diagnostic.open_float()<cr>', opts)
   end,
 })
 
@@ -67,16 +69,23 @@ require("mason-lspconfig").setup({
                     })
                 end
             })
+        end,
+
+        matlab_ls = function()
+            require('lspconfig').matlab_ls.setup({
+                { "matlab-language-server --stdio" },
+                single_file_support = true
+            })
         end
     },
 })
 
 
-require("lsp_lines").setup()
+-- require("lsp_lines").setup()
 
 -- Disable virtual_text since it's redundant due to lsp_lines.
 vim.diagnostic.config({
-    virtual_text = false,
+    virtual_text = true,
 })
 
 local cmp_ultisnips_mappings = require("cmp_nvim_ultisnips.mappings")

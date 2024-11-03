@@ -35,7 +35,8 @@ vim.opt.smoothscroll = true
 -- folding with treesitter
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-vim.opt.foldenable = false
+vim.opt.foldlevel = 99
+vim.opt.foldenable = true
 
 -- no shada (permissions issue on ece machines)
 vim.opt.shadafile = "NONE"

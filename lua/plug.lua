@@ -52,6 +52,11 @@ require("lazy").setup({
 
     {"stevearc/oil.nvim"},
 
+    {
+        'nvim-telescope/telescope.nvim', tag = '0.1.8',
+        dependencies = { 'nvim-lua/plenary.nvim' }
+    },
+
     -- Lean
     {
         'Julian/lean.nvim',
@@ -60,7 +65,7 @@ require("lazy").setup({
         dependencies = {
             'neovim/nvim-lspconfig',
             'nvim-lua/plenary.nvim',
-            'nvim-telescope/telescope.nvim'
+            -- 'nvim-telescope/telescope.nvim'
             -- you also will likely want nvim-cmp or some completion engine
         },
 
