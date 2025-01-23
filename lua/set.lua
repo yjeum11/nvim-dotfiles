@@ -38,8 +38,3 @@ vim.opt.mouse = "a"
 vim.opt.encoding = "utf-8"
 
 vim.g.mapleader = " "
-
-vim.api.nvim_create_autocmd({"BufEnter"}, {
-    pattern = {"*.sml"},
-    command = "set commentstring=(*%s*)"
-})
