@@ -104,19 +104,6 @@ require("lazy").setup({
             { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
         }
     },
-    {
-        "folke/zen-mode.nvim",
-        opts = {
-            window = { 
-                backdrop = 1,
-                options = {
-                    number = false,
-                    colorcolumn = ""
-                },
-            },
-        },
-    }
-
 }
 })
 
