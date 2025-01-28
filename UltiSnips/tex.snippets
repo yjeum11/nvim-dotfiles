@@ -33,6 +33,10 @@ pre_expand "create_matrix(snip)"
 snippet "(small|[bBpvV])?mat(rix)?(\d+)x(\d+)" "Generate (small|[bBpvV])?matrix of *rows* by *columns*" r
 endsnippet
 
+snippet "cc|code" "code env 15150" ir
+\code{$1}$0
+endsnippet
+
 snippet begin "begin environment" b
 \begin{$1}
 	$0
@@ -168,9 +172,14 @@ snippet == "equals" iA
 endsnippet
 
 context "math()"
-snippet ... "ldots" iA
-\ldots
+snippet ~= "extensionally equals" iA
+&\eeq $1 \\\\
 endsnippet
+
+# context "math()"
+# snippet ... "ldots" iA
+# \ldots
+# endsnippet
 
 context "math()"
 snippet EE "exists" iA
@@ -184,7 +193,7 @@ endsnippet
 
 priority 100
 context "math()"
-snippet '(?<!\\)(sin|cos|tan|ln|log|pi|nabla|sigma|rho|gamma|alpha|beta|psi|tau|lambda)' "function names" rwA
+snippet '(?<!\\)(sin|cos|tan|ln|log|pi|nabla|sigma|rho|gamma|alpha|beta|psi|tau|lambda|Omega|omega)' "function names" rwA
 \\`!p snip.rv = match.group(1)`
 endsnippet
 
@@ -208,10 +217,10 @@ snippet '(?<!\\var)(phi)' "varph" rwA
 \varphi
 endsnippet
 
-context "math()"
-snippet 'ee' "varep" rwA
-\varepsilon
-endsnippet
+# context "math()"
+# snippet 'ee' "varep" rwA
+# \varepsilon
+# endsnippet
 
 # context "math()"
 # snippet par "derivative with x" iA

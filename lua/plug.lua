@@ -52,29 +52,19 @@ require("lazy").setup({
 
     {"stevearc/oil.nvim"},
 
-    {
-        'nvim-telescope/telescope.nvim', tag = '0.1.8',
-        dependencies = { 'nvim-lua/plenary.nvim' }
-    },
-
-    -- Lean
-    {
-        'Julian/lean.nvim',
-        event = { 'BufReadPre *.lean', 'BufNewFile *.lean' },
-
-        dependencies = {
-            'neovim/nvim-lspconfig',
-            'nvim-lua/plenary.nvim',
-            -- 'nvim-telescope/telescope.nvim'
-            -- you also will likely want nvim-cmp or some completion engine
-        },
-
-        -- see details below for full configuration options
-        opts = {
-            lsp = {},
-            mappings = true,
-        }
-    },
+    -- -- Lean
+    -- {
+    --     'Julian/lean.nvim',
+    --     lazy = true,
+    --     event = { 'BufReadPre *.lean', 'BufNewFile *.lean' },
+    --
+    --     dependencies = {
+    --         'neovim/nvim-lspconfig',
+    --         'nvim-lua/plenary.nvim',
+    --     },
+    --
+    --     opts = { lsp = {}, mappings = true, }
+    -- },
     "tpope/vim-surround",
     {
         "folke/which-key.nvim",
@@ -113,6 +103,18 @@ require("lazy").setup({
         keys = {
             { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
         }
+    },
+    {
+        "folke/zen-mode.nvim",
+        opts = {
+            window = { 
+                backdrop = 1,
+                options = {
+                    number = false,
+                    colorcolumn = ""
+                },
+            },
+        },
     }
 
 }
@@ -126,7 +128,6 @@ require("plugins.lsp")
 require("plugins.lualine")
 require("plugins.comment")
 require("plugins.vimtex")
-require("plugins.lean")
+-- require("plugins.lean")
 require("plugins.oil")
-require("plugins.lazygit")
 
