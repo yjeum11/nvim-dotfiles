@@ -46,3 +46,11 @@ vim.opt.encoding = "utf-8"
 
 vim.g.mapleader = " "
 
+vim.api.nvim_create_autocmd({"BufEnter"}, {
+  pattern = {"*.v"},
+  callback = function() 
+      vim.opt_local.foldmethod = "marker"
+      vim.opt_local.filetype = "verilog"
+  end
+})
+
