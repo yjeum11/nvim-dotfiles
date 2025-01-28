@@ -1,7 +1,7 @@
 -- Reserve a space in the gutter
 vim.opt.signcolumn = 'yes'
 
-vim.g.python3_host_prog = '/Users/yjeum/miniconda3/bin/python3'
+vim.g.python3_host_prog = '~/miniconda3/bin/python3'
 
 -- Add cmp_nvim_lsp capabilities settings to lspconfig
 -- This should be executed before you configure any language server
