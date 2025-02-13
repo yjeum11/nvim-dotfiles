@@ -45,7 +45,14 @@ require("mason-lspconfig").setup({
                 { "matlab-language-server --stdio" },
                 single_file_support = true
             })
-        end
+        end,
+
+        clangd = function()
+            require('lspconfig').clangd.setup({
+                cmd = { "clangd", "--query-driver=**/arm-none-eabi-gcc" },
+            })
+        end,
+
     },
 })
 
