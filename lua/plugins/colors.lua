@@ -4,4 +4,4 @@ vim.opt.background = "dark"
 --     invert_tabline = true
 -- }
 -- vim.cmd([[colo gruvbox]])
-vim.cmd.colorscheme "catppuccin"
+vim.cmd.colorscheme "rose-pine"

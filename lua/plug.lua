@@ -17,7 +17,8 @@ require("lazy").setup({
         vim.cmd(":TSUpdate")
     end },
 
-    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+    -- { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+    { "rose-pine/neovim", name = "rose-pine" },
 
     "mbbill/undotree",
     { "junegunn/fzf", build =
@@ -106,7 +107,7 @@ require("lazy").setup({
 })
 
 require("plugins.treesitter")
-require("plugins.gruvbox")
+require("plugins.colors")
 require("plugins.undotree")
 require("plugins.fzf")
 require("plugins.lsp")
