@@ -17,7 +17,7 @@ require("lazy").setup({
         vim.cmd(":TSUpdate")
     end },
 
-    -- { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     { "rose-pine/neovim", name = "rose-pine" },
 
     "mbbill/undotree",
