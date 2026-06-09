@@ -51,19 +51,6 @@ require("lazy").setup({
 
     {"stevearc/oil.nvim"},
 
-    -- -- Lean
-    -- {
-    --     'Julian/lean.nvim',
-    --     lazy = true,
-    --     event = { 'BufReadPre *.lean', 'BufNewFile *.lean' },
-    --
-    --     dependencies = {
-    --         'neovim/nvim-lspconfig',
-    --         'nvim-lua/plenary.nvim',
-    --     },
-    --
-    --     opts = { lsp = {}, mappings = true, }
-    -- },
     "tpope/vim-surround",
     {
         "folke/which-key.nvim",
@@ -102,6 +89,16 @@ require("lazy").setup({
         keys = {
             { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
         }
+    },
+    {
+        'MeanderingProgrammer/render-markdown.nvim',
+        dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+        opts = { sign = { enabled = false }, },
+    },
+    {
+        'folke/todo-comments.nvim',
+        dependencies = { "nvim-lua/plenary.nvim" },
+        opts = {},
     },
 }
 })

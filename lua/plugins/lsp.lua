@@ -56,6 +56,8 @@ require("mason-lspconfig").setup({
     },
 })
 
+-- manage HLS not with mason
+require('lspconfig').hls.setup({})
 
 -- require("lsp_lines").setup()
 
